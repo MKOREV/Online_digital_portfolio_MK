@@ -5,74 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Portfolio MK</title>
     <link rel="stylesheet" href="./css/style.css">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body id="homepage">
 
 <header>
 <nav>
-    <a href="./index.html" style="display:inline-block; text-decoration:none; color:#073571;"><p>Home | </p></a>
-    <a href="./pages/about.html" style="display:inline-block; text-decoration:none; color:#073571;"><p>About me | </p></a>
-    <a href="./pages/work.html" style="display:inline-block; text-decoration:none; color:#073571;"><p>My work | </p></a>
-    <a href="./pages/contact.html" style="display:inline-block; text-decoration:none; color:#073571;"><p>Contact | </p></a>
+    <a href="./index.html" class="logo"><img src="./images/logo.png" alt="Logo"></a>
+    <div class="nav-links">
+        <a href="./index.html" style="display:inline-block; text-decoration:none; color:#073571;">Home | </a>
+        <a href="./pages/about.html" style="display:inline-block; text-decoration:none; color:#073571;">About me | </a>
+        <a href="./pages/work.html" style="display:inline-block; text-decoration:none; color:#073571;">My work | </a>
+        <a href="./pages/contact.html" style="display:inline-block; text-decoration:none; color:#073571;">Contact | </a>
+    </div>
 </nav>
 </header>
 
 <main>
 
-<section id="intro">
-    <h2>Welcome to my portfolio!</h2>
-    <h1>I am Minqiu</h1>
-    <p> This digital portfolio is intended for prospective GIS employers, such as ESRI or urban consulting organizations,
-        seeking someone with mapping and spatial data analysis skills (me!). In this portfolio I showcase my abilities to analyze spatial data
-        and create maps for various applications in the urban context. 
-        I want my portfolio to be professional and transparent to make it simple for employers to understand how I may benefit their team. 
-        It is not just about presenting my prior work, it is also about demonstrating my potential to have an influence in the GIS industry.
-    </p>
-</section>
-
-<em></em>
-
-<section id="why portfolio">
-    <h3>Why I want a digital portfolio:</h3>
-    <ul><em>
-        <li>Why limit my audience when a digital portfolio can connect me to the world?</li>
-        <li>Why settle for static when a digital portfolio lets my work come alive?</li>
-        <li>Why let my creativity stay hidden when I can showcase it 24/7 online?</li>
-        <li>Why rely on words alone when a digital portfolio lets my visuals do the talking?</li>
-        <li>Why keep reinventing the wheel when a digital portfolio is easy to update?</li>
-        <li>Why create boundaries when a digital portfolio removes them all?</li>
-        <li>Why let paper dictate my creativity when pixels offer endless freedom?</li>
-        <li>Why blend into the crowd when a digital portfolio can make me stand out?</li>
-        </em>
-    </ul>
-</section>
-
-    <br>
-
-<section id="ghandi quote">
-    <p>Here is a quote from Mahatma Ghandi:</p>
-
-     <blockquote cite="https://www.goodreads.com/author/quotes/5810891.Mahatma_Gandhi">
-        Be the change that you wish to see in the world.
-     </blockquote>
-
-    <p> I included this quote by Gandhi because it resonates with my belief that change starts with yourself. 
-        If you want to see a difference in the world, you cannot wait for others to make the first move. 
-        You have to take the initiative. For me, this mindset drives my work in urban design and data visualization, 
-        where I am focused on creating solutions that can make a real impact, one project at a time.</p>
-
-</section>
+<div class="typing-container">
+        <span id="sentence" class="sentence">Hi, I am a </spa an>
+        <span id="feature-text"></span>
+        <span class="input-cursor"></span>
+</div>
 
 </main>
 
-
 <footer id="footer">
-
 <p> Let's connect!</p>
     <ul class="icons">
-        <li><a target="_blank" href="https://www.linkedin.com/in/mkorevaar/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-        <li><a target="_blank" href="https://github.com/MKOREV" class="icon brands fa-github"><span class="label">Github</span></a></li>
-        <li><a href="mailto:minqiu.korevaar@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/in/mkorevaar/" class="icon brands fa-linkedin"><i class="fab fa-linkedin"></i></a></li>
+        <li><a target="_blank" href="https://github.com/MKOREV" class="icon brands fa-github"><i class="fab fa-github"></i></a></li>
+        <li><a href="mailto:minqiu.korevaar@gmail.com" class="icon solid fa-envelope"><i class="fas fa-envelope"></i></a></li>
     </ul>
 
 <em></em>
@@ -81,7 +47,7 @@
 </footer>
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-.<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
 </body>
 </html>

@@ -1,5 +1,3 @@
-
-
 *{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-right: 10px;
@@ -7,23 +5,83 @@
     }
 
 
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+  }
+  
+  nav .logo img {
+      height: 50px;
+  }
+  
+  nav .nav-links {
+      display: flex;
+      gap: 10px;
+  }
+  
+  nav .nav-links a {
+      display: inline-block;
+      text-decoration: none;
+      color: #073571;
+  }
+
 nav {
-    text-align: right;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
 }
+
+nav .logo img {
+  height: 50px;
+}
+
+nav .nav-links {
+  display: flex;
+  gap: 10px;
+}
+
+nav .nav-links a {
+  display: inline-block;
+  text-decoration: none;
+  color: #073571;
+}
+
 
 h2 {
     color: blue;
     text-align: center;
         }
 
-ul, ol {
-    color:cadetblue;
+/* Typing effect home page */
+#sentence {
+  font-size: 35px;
+}
+.typing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 35px;
+  background-color: rgb(65, 51, 137);
+  margin-left: 8px;
 }
 
-blockquote {
-    font-family: 'Courier New', Courier, monospace;
-    margin-left: 4em;
-    }
+@keyframes blink {
+  0% {opacity: 1;}
+  40% {opacity: 1;}
+  60% {opacity: 0;}
+  100% {opacity: 0;}
+}
+/* Then, inside .input-cursor: */
+.input-cursor { 
+animation: blink .6s linear infinite alternate;
+}
 
 #profile_pic    {
     float: right; width: 150px; height: 150px; overflow: hidden; border-radius: 50%; 
@@ -78,47 +136,39 @@ footer {
     text-align: center;
 }
 
-
-/* Icons */
-
 ul.icons {
     cursor: default;
     list-style: none;
     padding-left: 0;
 }
 
-    ul.icons li {
-        display: inline-block;
-        padding: 0 1em 0 0;
-    }
+ul.icons li {
+    display: inline-block;
+    padding: 0 1em 0 0;
+}
 
-        ul.icons li:last-child {
-            padding-right: 0 !important;
-        }
+ul.icons li:last-child {
+    padding-right: 0 !important;
+}
 
-    ul.icons.major {
-        padding: 1em 0;
-    }
+ul.icons li a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        ul.icons.major li {
-            padding-right: 3.5em;
-        }
-
-            @media screen and (max-width: 736px) {
-
-                ul.icons.major li {
-                    padding: 0 1em !important;
-                }
-
-            }
+ul.icons li a .fab, ul.icons li a .fas {
+    font-size: 24px;
+    margin-right: 8px;
+}
 
 
-            .section {
+
+.section {
                 margin: 20px;
                 padding: 10px;
             }
             
-            .grid-gallery {
+.grid-gallery {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr); 
                 gap: 20px; 
@@ -126,13 +176,13 @@ ul.icons {
                 margin: 0 auto;
             }
             
-            .grid-item {
+.grid-item {
                 position: relative;
                 overflow: hidden;
                 aspect-ratio: 2 / 3; 
             }
             
-            .grid-item img {
+.grid-item img {
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
@@ -752,12 +802,3 @@ ul.icons {
 
   
 
-#homepage { 
-    background-color: aliceblue;
-        }
-#aboutpage{
-    background-color:cornsilk;
-        }
-#workpage{
-        background-color: honeydew
-        }
