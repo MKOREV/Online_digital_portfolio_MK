@@ -10,8 +10,13 @@
     }
 
 #aboutpage {
-  padding-left: 30px; /* Add padding to the left */
-  padding-right: 30px; /* Optional: Add padding to the right */
+  padding-left: 30px; 
+  padding-right: 30px; 
+}
+
+#workpage {
+  padding-left: 50px;
+  padding-right: 50px; 
 }
 
   body {
@@ -414,7 +419,32 @@ div.gallery {
               display: block;
               overflow: hidden;
               aspect-ratio: 2 / 3; /* Maintain aspect ratio */
+              opacity: 0; /* Fully transparent */
+              transform: scale(0.8); /* Slightly smaller */
+              transition: opacity 0.3s ease, transform 0.3s ease;
+              position: absolute; /* Remove it from the grid layout */
           }
+
+          .grid-item.show {
+            opacity: 1; /* Fully visible */
+            transform: scale(1); /* Normal size */
+            display: block; /* Ensure the item is displayed */
+            position: relative; /* Restore it to the grid layout */
+            animation: popIn 0.5s ease forwards;
+          }
+
+          /* Keyframes for the pop-in effect */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8); /* Start smaller */
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Normal size */
+  }
+}
           
           .grid-item img {
               width: 100%;
