@@ -1,14 +1,17 @@
 *{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-right: 10px;
-    margin-left: 10px;
+    
     }
 
-#homepage * body{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  overflow: hidden;
+    #homepage {
+      margin: 0; /* Remove all margins */
+      padding: 0; /* Remove all padding */
+      width: 100%; /* Ensure the homepage takes up the full width */
+    }
+
+#aboutpage {
+  padding-left: 30px; /* Add padding to the left */
+  padding-right: 30px; /* Optional: Add padding to the right */
 }
 
   body {
@@ -20,7 +23,7 @@
   
 /* Responsive adjustments for tablets and small screens */
 @media (max-width: 768px) {
-  body {
+  body:not(#homepage) {
       padding-left: 12vw;
   }
   section {
@@ -30,14 +33,14 @@
       font-size: 6vw;
   }
   h2 {
-      font-size: 5vw;
+      font-size: 6vw;
   }
   h3 {
-      font-size: 4vw;
+      font-size: 5vw;
   }
   p {
-      font-size: 3vw;
-      width: 90%;
+      font-size: 4vw;
+      width: 100%;
   }
 }
 
@@ -111,22 +114,30 @@ nav {
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+  padding: 0 20px;
+}
+nav .logo {
+  margin-left: 20px; /* Add space to the left of the logo */
 }
 
+nav .nav-links {
+  margin-right: 40px; /* Add space to the right of the links */
+  display: flex;
+  gap: 30px; /* Add spacing between links */
+}
 /* Full-Screen Background Image */
 .background-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0%;
+  left: 0%;
   width: 100%;
   height: 100%;
   background-image: url('../images/bg_topo.jpg'); 
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
-  z-index: 999; /* Ensure it appears above all other content */
+  z-index: 10; /* Ensure it appears above all other content */
   opacity: 0; /* Start fully transparent */
-  animation: fadeIn 2s ease-in-out forwards, fadeOut 2s ease-in-out 4s forwards; /* Fade in and out */
+  animation: fadeIn 2s ease-in-out forwards, fadeOut 2s ease-in-out 2s forwards; /* Fade in and out */
 }
 
 /* Hero Page */
@@ -138,10 +149,9 @@ nav {
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 3vw;
   opacity: 0; /* Start fully transparent */
-  z-index: 1; /* Ensure it appears below the background overlay */
-  animation: fadeInContent 2s ease-in-out 4s forwards; /* Fade in after the background fades out */
+  z-index: 20; /* Ensure it appears below the background overlay */
+  animation: fadeInContent 2s ease-in-out 3s forwards; /* Fade in after the background fades out */
  }
 
 
@@ -155,15 +165,15 @@ nav {
   justify-content: center; /* Center the content vertically */
   text-align: center; /* Center the text inside the div */
   border: 2px solid #000; /* Add a solid border */
-  padding: 60px; /* Add padding inside the border */
+  padding: 30px; /* Add padding inside the border */
   background-color: rgba(255, 255, 255, 0.8); /* Optional: Add a translucent background */
-  z-index: 2; /* Ensure it appears above other elements */
+  z-index: 30; /* Ensure it appears above other elements */
   max-width: 500px; /* Set a maximum width for responsiveness */
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
-.hero-content:hover {
+.hero-content:hover{
   transform: scale(1.05); /* Slightly enlarge the box */
   box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2); /* Add a larger shadow on hover */
 }
@@ -190,11 +200,11 @@ nav {
 
 .hero-buttons {
     display: flex;
-    margin-top: 10px; /* Add space between the hero-content and the buttons */
+    margin-top: 5px; /* Add space between the hero-content and the buttons */
     flex-direction: row; /* Keep buttons in a row */
     justify-content: center; /* Center the buttons horizontally */
     align-items: center; /* Align buttons vertically */
-    z-index: 0; /* Ensure it appears below the hero-content */
+    z-index: 30; /* Ensure it appears below the hero-content */
     transition: all 0.3s ease;
   }
 
@@ -203,8 +213,8 @@ nav {
   font-weight: 400;
   color: #205dc6;
   text-decoration: none;
-  margin-right: 4vw;
-  margin-left: 5vw;
+  margin-right: 2vw;
+  margin-left: 4.5vw;
   padding: 1vw 2vw;
   border: 0.15vw solid #1c075e;
   border-radius: 0.5vw;
@@ -232,7 +242,7 @@ nav {
     opacity: 1;
   }
   100% {
-    opacity: 0;
+    opacity: 0.9;
   }
 }
 
@@ -298,9 +308,9 @@ nav {
     float: right; width: 150px; height: 150px; overflow: hidden; border-radius: 50%; 
     object-fit: cover;
     object-position: 50% 30%;
-    margin-right: 3em;
     border: 3px solid darkblue;
-    pointer-events: none;
+    margin-right: 7em;
+    margin-top: 3em;
     } 
 
 #profile_pic{ 
@@ -319,6 +329,25 @@ nav {
   box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.2);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+}
+
+/* Adjust for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  #profile_pic {
+    float: none; /* Remove float to stack elements vertically */
+    margin: 0 auto; /* Center the profile picture */
+    width: 120px; /* Reduce size */
+    height: 120px;
+  }
+}
+
+/* Adjust for mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  #profile_pic {
+    width: 100px; /* Further reduce size */
+    height: 100px;
+    margin-top: 1em; /* Add some spacing above */
+  }
 }
 
 div.gallery {
@@ -344,10 +373,7 @@ div.gallery {
 
 
 
-.section {
-                margin: 20px;
-                padding: 10px;
-            }
+
             
             .button-group {
               text-align: center;
@@ -356,9 +382,9 @@ div.gallery {
           }
           
           .button {
-              background-color: #007bff;
-              color: white;
-              border: none;
+              background-color: #ffffff;
+              color: black;
+              border: 2px solid darkblue;
               padding: 10px 20px;
               margin: 5px;
               border-radius: 5px;
@@ -367,11 +393,12 @@ div.gallery {
           }
           
           .button:hover {
-              background-color: #0056b3;
+              background-color: #579de8;
           }
           
           .button.active {
-              background-color: #0056b3;
+              background-color: #09488b;
+              color: white;
           }
           
           /* Grid Gallery */
@@ -402,32 +429,6 @@ div.gallery {
               transform: scale(1.1);
           }
 
-/* .grid-gallery {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr); 
-                gap: 20px; 
-                justify-content: space-between; 
-                margin: 0 auto;
-            }
-            
-.grid-item {
-                position: relative;
-                overflow: hidden;
-                aspect-ratio: 2 / 3; 
-            }
-            
-.grid-item img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                border-radius: 10px;
-                transition: transform 0.3s ease, opacity 0.3s ease;
-            } 
-            
-            .grid-item:hover img {
-                opacity: 0.3;
-                transform: scale(1.1);
-            } */
             
             .grid-gallery-item-content {
                 text-decoration: none;
@@ -502,6 +503,24 @@ div.gallery {
 .cv:active {
   background: var(--color);
   color: #fff;
+}
+
+/* Adjust for tablets (max-width: 768px) */
+@media (max-width: 768px) {
+  .cv {
+    font-size: 14px; /* Reduce font size */
+    padding: 10px 20px; /* Adjust padding */
+    width: 80%; /* Make the button take up more space */
+  }
+}
+
+/* Adjust for mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .cv {
+    font-size: 12px; /* Further reduce font size */
+    padding: 8px 10px; /* Adjust padding */
+    width: 100%; /* Make the button full width */
+  }
 }
 
 /* Contact page responsive css */
