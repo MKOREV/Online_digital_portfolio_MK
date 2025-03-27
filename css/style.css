@@ -25,53 +25,6 @@
       text-align: center;
   }
 
-  
-/* Responsive adjustments for tablets and small screens */
-@media (max-width: 768px) {
-  body:not(#homepage) {
-      padding-left: 12vw;
-  }
-  section {
-      padding: 8vh 4vw;
-  }
-  h1 {
-      font-size: 6vw;
-  }
-  h2 {
-      font-size: 6vw;
-  }
-  h3 {
-      font-size: 5vw;
-  }
-  p {
-      font-size: 4vw;
-      width: 100%;
-  }
-}
-
-/* Responsive adjustments for mobile phones */
-@media (max-width: 480px) {
-  body {
-      padding-left: 16vw;
-  }
-  section {
-      padding: 6vh 2vw;
-  }
-  h1 {
-      font-size: 7vw;
-  }
-  h2 {
-      font-size: 6vw;
-  }
-  h3 {
-      font-size: 5vw;
-  }
-  p {
-      font-size: 4.5vw;
-      width: 95%;
-  }
-}
-
 /* Text style */
 
 
@@ -94,6 +47,54 @@ p {
   text-align: justify;
   line-height: 1.5;
   width: 75%;
+}
+
+/* Responsive adjustments for tablets and small screens */
+@media (max-width: 768px) {
+  body:not(#homepage) {
+      padding-left: 12vw;
+  }
+  section {
+      padding: 8vh 4vw;
+  }
+  h1 {
+      font-size: 6vw;
+  }
+  h2 {
+      font-size: 6vw;
+  }
+  h3 {
+      font-size: 5vw;
+  }
+  p {
+      font-size: 3vw;
+      width: 95%;
+  }
+}
+
+/* Responsive adjustments for mobile phones */
+@media (max-width: 480px) {
+  body {
+      padding-left: 16vw;
+  }
+  section {
+      padding: 6vh 2vw;
+  }
+  h1 {
+      font-size: 7vw;
+  }
+  h2 {
+      font-size: 6vw;
+  }
+  h3 {
+      font-size: 5vw;
+  }
+  body p {
+    font-size: 1.7vw;
+    text-align: justify;
+    line-height: 2;
+    width: 95%;
+  }
 }
 
   /* Pages Layout */
@@ -122,7 +123,18 @@ nav {
   padding: 0 20px;
 }
 nav .logo {
-  margin-left: 20px; /* Add space to the left of the logo */
+  display: flex;
+}
+
+nav .logo img {
+  height: 270px; /* Set the height of the logo */
+  width: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Ensure it doesn't exceed the navbar height */
+  transition: transform 0.3s ease; /* Optional: Add a hover effect */
+}
+
+nav .logo img:hover {
+  transform: scale(1.1); /* Slightly enlarge the logo on hover */
 }
 
 nav .nav-links {
@@ -130,6 +142,37 @@ nav .nav-links {
   display: flex;
   gap: 30px; /* Add spacing between links */
 }
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  nav {
+    height: 50px; /* Reduce navbar height */
+    padding: 0 10px; /* Adjust padding */
+  }
+
+  nav .logo img {
+    height: 170px; /* Reduce logo size */
+  }
+
+  nav .nav-links {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    height: 40px; /* Further reduce navbar height */
+  }
+
+  nav .logo img {
+    height: 130px; /* Further reduce logo size */
+  }
+
+}
+
+
+
 /* Full-Screen Background Image */
 .background-overlay {
   position: fixed;
@@ -265,7 +308,7 @@ nav .nav-links {
 /* Responsive Design */
 @media (max-width: 768px) {
   .headline {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .subheadline {
@@ -273,8 +316,24 @@ nav .nav-links {
   }
 
   .hero-button {
-    font-size: 0.9rem;
-    padding: 8px 16px;
+    font-size: 1rem;
+    padding: 5px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h3 {
+    font-size: 1.8rem; /* Increase font size for smaller screens */
+  }
+
+  .hero-content {
+    padding: 20px; /* Adjust padding for better spacing */
+    max-width: 90%; /* Allow the box to take up more space on smaller screens */
+  }
+
+  .hero-buttons a {
+    font-size: 1.2rem; /* Increase font size for buttons */
+    padding: 12px 20px; /* Adjust padding for larger buttons */
   }
 }
 
@@ -352,6 +411,11 @@ nav .nav-links {
     width: 100px; /* Further reduce size */
     height: 100px;
     margin-top: 1em; /* Add some spacing above */
+  }
+
+  p {
+    width: 100%; /* Ensure the paragraph takes up the full width */
+    text-align: center; /* Center-align the text */
   }
 }
 
@@ -538,18 +602,17 @@ div.gallery {
 /* Adjust for tablets (max-width: 768px) */
 @media (max-width: 768px) {
   .cv {
-    font-size: 14px; /* Reduce font size */
+    font-size: 20px; /* Reduce font size */
     padding: 10px 20px; /* Adjust padding */
-    width: 80%; /* Make the button take up more space */
+    width: 50%; /* Make the button take up more space */
   }
 }
 
 /* Adjust for mobile phones (max-width: 480px) */
 @media (max-width: 480px) {
   .cv {
-    font-size: 12px; /* Further reduce font size */
-    padding: 8px 10px; /* Adjust padding */
-    width: 100%; /* Make the button full width */
+    font-size: 18px; /* Further reduce font size */
+    width: 50%; /* Make the button full width */
   }
 }
 

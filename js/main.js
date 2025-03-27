@@ -156,4 +156,18 @@ function initProjectFiltering() {
 initProjectFiltering();
 
 
+// Hamburger Menu
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const navLinksOverlay = document.querySelector(".nav-links-overlay");
+
+  // Ensure the hamburger and overlay exist before adding event listeners
+  if (hamburger && navLinksOverlay) {
+    // Toggle the navigation overlay
+    hamburger.addEventListener("click", () => {
+      navLinksOverlay.classList.toggle("active");
+      hamburger.classList.toggle("open");
+    });
+  }
+});
 
