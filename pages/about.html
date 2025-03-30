@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Portfolio MK</title>
   <link rel="stylesheet" href="../css/style.css">  
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="../js/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
 </head>
 <body id="aboutpage">
 
@@ -13,14 +18,13 @@
         <a href="../index.html" class="logo"><img src="../images/1_logo.png" alt="Logo"></a>
         <div class="nav-links">
             <a href="../index.html" style="display:inline-block; text-decoration:none; color:#073571;">Home | </a>
-            <a href="./about.html" style="display:inline-block; text-decoration:none; color:#073571;">About me | </a>
+            <a href="./about.html" style="display:inline-block; text-decoration:none; color:#073571;">About | </a>
             <a href="./work.html" style="display:inline-block; text-decoration:none; color:#073571;">My work | </a>
-            <a href="./contact.html" style="display:inline-block; text-decoration:none; color:#073571;">Contact | </a>
         </div>
     </nav>
 </header>
 
-    <img id="profile_pic" src="../images/profiel.jpg" alt="profile_picture_MK">
+    <!-- <img id="profile_pic" src="../images/profiel.jpg" alt="profile_picture_MK">
 
     <div class="aboutmetext">
     <p> I am a first-year Master student in the MADE (Metropolitan Analysis, Design, and Engineering) program. 
@@ -34,7 +38,392 @@
 </div>
 
 
-    <button class="cv" onclick="window.open('../assests/English CV Minqiu aug 2024.pdf', '_blank')"> Click for CV</button>
+    <button class="cv" onclick="window.open('../assests/English CV Minqiu aug 2024.pdf', '_blank')"> Click for CV</button> -->
+
+
+     <!--==================== MAIN ====================-->
+     <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__content grid">
+                    <div class="home__social">
+                        <a href="https://www.linkedin.com/in/mkorevaar/" target="_blank" class="home__social-icon">
+                            <i class="uil uil-linkedin-alt"></i>
+                        </a>
+
+                        <a href="mailto:minqiu.korevaar@gmail.com" target="_blank" class="home__social-icon">
+                            <i class="uil uil-at"></i>                            
+                        </a>
+
+                        <a href="https://github.com/MKOREV" target="_blank" class="home__social-icon">
+                            <i class="uil uil-github-alt"></i>                            
+                        </a>
+                    </div>
+
+                    <div class="home__img">
+                        <img id="profile_pic" src="../images/profiel.jpg" alt="profile_picture_MK">
+                    </div>
+
+                    <div class="home__data">
+                        <div class="home__intro">
+                        <h1>HI, I am </h1>
+                        <h2>Minqiu</h2>
+                        </div>
+                        <h1>Master student Metropolitan Analysis Design and Engineering</h1>
+                        <p class="home__description">Lorem ipsum dolor sit amet. Sit debitis exercitationem eos iusto dignissimos non architecto ratione  </p>
+                        <div class="hero-buttons">
+                            <a href="./pages/contact.html" class="hero-button">Contact me →</a>
+                            <a href="./pages/work.html" class="hero-button">View All Projects →</a>
+                        </div>
+                    </div>
+                </div>
+
+                
+                
+            </div>
+        </section>
+
+        <!--==================== ABOUT ====================-->
+        <section class="about section" id="about">
+            <h2 class="section__title">About Me</h2>
+            <span class="section__subtitle">My introduction</span>
+
+            <div class="about__container container grid">
+                <img src="images/FB5AEA12-A40C-46BC-A5FA-F585F524F260_4_5005_c.jpeg" alt="" class="about__img">
+
+                <div class="about__data">
+                    <p class="about__description">Lorem ipsum dolor sit amet. Ut voluptas possimus rem soluta repellat ut cumque libero et enim quasi et ipsa rerum sit ullam internos ad laboriosam veniam. Non magni voluptatem vel voluptate dolorem aut excepturi consectetur non doloremque nulla aut facilis numquam.
+
+                        Eum voluptatem nostrum ad eveniet quasi et ipsum error non iure sint? In debitis velit sed fugiat omnis aut labore officia eum ipsum minus. Sit harum labore et doloribus delectus et quia explicabo..
+                    </p>
+
+
+
+                    <div class="about__buttons">
+                        <a download="" onclick="window.open('../assests/English CV Minqiu aug 2024.pdf', '_blank')" class="button button--flex">
+                            Download CV <i class="uil uil-download-alt button__icon"></i>
+                        </a>             
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+
+        <section class="skills section" id="skills">
+            <h2 class="section__title">Skills</h2>
+            <span class="section__subtitle">My technical level</span>
+          
+            <div class="skills__container">
+              <!-- GIS Skills (Default Open) -->
+              <div class="skills__content skills__open">
+                <div class="skills__header">
+                  <i class="uil uil-map skills__icon"></i>
+                  <h3 class="skills__title">GIS</h3>
+                  <i class="uil uil-angle-down skills__arrow"></i>
+                </div>
+                <div class="skills__list">
+                  <div class="skill">
+                    <div class="skill__info">
+                      <h4 class="skill__name">ArcGIS</h4>
+                      <span class="skill__percentage">90%</span>
+                    </div>
+                    <div class="skill__bar">
+                      <div class="skill__progress" style="width: 0%;" data-percentage="90"></div>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <div class="skill__info">
+                      <h4 class="skill__name">QGIS</h4>
+                      <span class="skill__percentage">85%</span>
+                    </div>
+                    <div class="skill__bar">
+                      <div class="skill__progress" style="width: 0%;" data-percentage="85"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Programming Skills -->
+              <div class="skills__content skills__close">
+                <div class="skills__header">
+                  <i class="uil uil-code-branch skills__icon"></i>
+                  <h3 class="skills__title">Data visualization</h3>
+                  <i class="uil uil-angle-down skills__arrow"></i>
+                </div>
+                <div class="skills__list">
+                  <div class="skill">
+                    <div class="skill__info">
+                      <h4 class="skill__name">Python</h4>
+                      <span class="skill__percentage">80%</span>
+                    </div>
+                    <div class="skill__bar">
+                      <div class="skill__progress" style="width: 0%;" data-percentage="80"></div>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <div class="skill__info">
+                      <h4 class="skill__name">JavaScript</h4>
+                      <span class="skill__percentage">70%</span>
+                    </div>
+                    <div class="skill__bar">
+                      <div class="skill__progress" style="width: 0%;" data-percentage="70"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Soft Skills -->
+              <div class="skills__content skills__close">
+                <div class="skills__header">
+                  <i class="uil uil-smile skills__icon"></i>
+                  <h3 class="skills__title">Soft Skills</h3>
+                  <i class="uil uil-angle-down skills__arrow"></i>
+                </div>
+                <div class="skills__list">
+                  <div class="skill">
+                    <div class="skill__info">
+                      <h4 class="skill__name">Communication</h4>
+                      <span class="skill__percentage">95%</span>
+                    </div>
+                    <div class="skill__bar">
+                      <div class="skill__progress" style="width: 0%;" data-percentage="95"></div>
+                    </div>
+                  </div>
+                  <div class="skill">
+                    <div class="skill__info">
+                      <h4 class="skill__name">Teamwork</h4>
+                      <span class="skill__percentage">90%</span>
+                    </div>
+                    <div class="skill__bar">
+                      <div class="skill__progress" style="width: 0%;" data-percentage="90"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+        <!--==================== QUALIFICATION ====================-->
+        <section class="qualification section">
+            <h2 class="section__title">Experience</h2>
+            <span class="section__subtitle">My personal journey</span>
+
+            <div class="qualification__container container">
+                <div class="qualification__tabs">
+                    <div class="qualification__button button--flex qualification__active" data-target="#education">
+                        <i class="uil uil-graduation-cap qualification__icon"></i>
+                        Education
+                    </div>
+
+                    <div class="qualification__button button--flex" data-target="#work">
+                        <i class="uil uil-briefcase-alt qualification__icon"></i>
+                        Work
+                    </div>                      
+                </div>
+
+                <div class="qualification__sections">
+                    <!--=============== QUALIFICATION CONTENT 1 ===============-->
+                    <div class="qualification__content qualification__active" data-content id="education">
+                        <!--=============== QUALIFICATION 1 ===============-->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">Maerlant Lyceum</h3>
+                                <span class="qualification__subtitle">The Hague, NL - High school</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2015 - 2021
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+                        
+                        <!--=============== QUALIFICATION 2 ===============-->
+                        <div class="qualification__data">                                 
+                            <div></div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                      
+                            <div>
+                                <h3 class="qualification__title">University of Amsterdam</h3>
+                                <span class="qualification__subtitle">Amsterdam, NL - Bachelor, Future Planet Studies</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2021 - 2024
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--=============== QUALIFICATION 3 ===============-->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">VU Amsterdam</h3>
+                                <span class="qualification__subtitle">Amsterdam, NL - Minor, Sustainability Management and Innovation</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2023 - 2024
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+
+                        <!--=============== QUALIFICATION 4 ===============-->
+                        <div class="qualification__data">
+                            <div></div>
+                                 
+                            <div class="qualification__time">
+                                <span class="qualification__rounder"></span>
+                                <!-- <span class="qualification__line"></span> -->
+                            </div>
+
+                            <div>
+                                <h3 class="qualification__title">TU Delft & Wageningen University & Research, at AMS institute</h3>
+                                <span class="qualification__subtitle">Amsterdam, NL - Master, Metropolitan Analysis Design and Engineering</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2024 - >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--=============== QUALIFICATION CONTENT 2 ===============-->
+                    <div class="qualification__content" data-content id="work">
+                        <!--=============== QUALIFICATION 1 ===============-->
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">MyWheels</h3>
+                                <span class="qualification__subtitle">Fleetoperator</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2023 - 2024
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+                        </div>
+                        
+                        <!--=============== QUALIFICATION 2 ===============-->
+                        <div class="qualification__data">
+                            <div></div>
+
+                            <div class="qualification__time">
+                                <span class="qualification__rounder"></span>
+                                <span class="qualification__line"></span>
+                            </div>
+
+                            <div>
+                                <h3 class="qualification__title">Regionaal Energieloket</h3>
+                                <span class="qualification__subtitle">Energiefixer</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2023 - 2024
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="qualification__data">
+                            <div>
+                                <h3 class="qualification__title">Faculty Student Council (UvA Faculty of Science)</h3>
+                                <span class="qualification__subtitle">General council member</span>
+                                <div class="qualification__calendar">
+                                    <i class="uil uil-calendar-alt"></i>
+                                    2024 - >
+                                </div>
+                            </div>
+
+                            <div>
+                                <span class="qualification__rounder"></span>
+                                <!-- <span class="qualification__line"></span> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!--==================== PORTFOLIO ====================-->
+        <section class="portfolio section" id="portfolio">
+            <h2 class="section__title">Portfolio</h2>
+            <span class="section__subtitle">Most recent work</span>
+            </div>
+        </section>
+
+       
+
+       
+
+        <!--==================== CONTACT ME ====================-->
+                    
+                    <section class="contact section" id="contact">
+                        <h2 class="section__title">Contact Me</h2>
+                        <span class="section__subtitle">Let's connect</span>
+                      
+                        <!-- Contact Container -->
+                        <div class="contact__container container">
+                          <!-- Left Column: Contact Information -->
+                          <div class="contact__information">
+                            <div class="contact__content">
+                              <i class="contact__icon uil uil-phone"></i>
+                              <div>
+                                <h3 class="contact__title">Call Me</h3>
+                                <span class="contact__subtitle">+123 456 789</span>
+                              </div>
+                            </div>
+                            <div class="contact__content">
+                              <i class="contact__icon uil uil-envelope"></i>
+                              <div>
+                                <h3 class="contact__title">Email</h3>
+                                <span class="contact__subtitle">example@email.com</span>
+                              </div>
+                            </div>
+                            <div class="contact__content">
+                              <i class="contact__icon uil uil-map-marker"></i>
+                              <div>
+                                <h3 class="contact__title">Location</h3>
+                                <span class="contact__subtitle">Amsterdam, the Netherlands</span>
+                              </div>
+                            </div>
+                          </div>
+                      
+                          <!-- Right Column: Contact Form -->
+                          <form action="#" class="contact__form">
+                            <div class="contact__form-group">
+                              <input type="text" placeholder="Your Name" class="contact__input" required />
+                              <input type="email" placeholder="Your Email" class="contact__input" required />
+                            </div>
+                            <div class="contact__form-group">
+                              <input type="text" placeholder="Project" class="contact__input" required />
+                            </div>
+                            <div class="contact__form-group">
+                              <textarea placeholder="Your Message" class="contact__textarea" required></textarea>
+                            </div>
+                            <button type="submit" class="button contact__button">Send Message</button>
+                          </form>
+                        </div>
+                      </section>
+
+        <!-- <a href="#" class="scrollup" id="scroll-top">
+            <i class="uil uil-arrow-up scrollup__icon"></i>
+        </a> -->
+    </main>  
+
 
 </body>
 </html>

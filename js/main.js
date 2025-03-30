@@ -1,81 +1,3 @@
-// // Typewriting Effect
-// function initTypewritingEffect() {
-//   const words = ["Geospatial Analyst.", "Data Visualist.", "Metropolitan Innovator."];
-//   let i = 0;
-//   let timer;
-
-//   function typingEffect() {
-//     let word = words[i].split("");
-//     var loopTyping = function () {
-//       if (word.length > 0) {
-//         document.getElementById("word").innerHTML += word.shift();
-//       } else {
-//         deletingEffect();
-//         return false;
-//       }
-//       timer = setTimeout(loopTyping, 200);
-//     };
-//     loopTyping();
-//   }
-
-//   function deletingEffect() {
-//     let word = words[i].split("");
-//     var loopDeleting = function () {
-//       if (word.length > 0) {
-//         word.pop();
-//         document.getElementById("word").innerHTML = word.join("");
-//       } else {
-//         if (words.length > i + 1) {
-//           i++;
-//         } else {
-//           i = 0;
-//         }
-//         typingEffect();
-//         return false;
-//       }
-//       timer = setTimeout(loopDeleting, 100);
-//     };
-//     loopDeleting();
-//   }
-
-//   typingEffect();
-// }
-
-// // Call the typewriting effect only if the element exists
-// if (document.getElementById("word")) {
-//   initTypewritingEffect();
-// }
-
-// // Project Filtering
-// function initProjectFiltering() {
-//   document.addEventListener("DOMContentLoaded", () => {
-//     const buttons = document.querySelectorAll(".button");
-//     const gridItems = document.querySelectorAll(".grid-item");
-
-//     buttons.forEach((button) => {
-//       button.addEventListener("click", () => {
-//         // Remove 'active' class from all buttons
-//         buttons.forEach((btn) => btn.classList.remove("active"));
-//         // Add 'active' class to the clicked button
-//         button.classList.add("active");
-
-//         const filter = button.getAttribute("data-filter");
-
-//         gridItems.forEach((item) => {
-//           // If filter is "*" or the item has the matching class, show it
-//           if (filter === "*" || item.classList.contains(filter.substring(1))) {
-//             item.style.display = "block"; // Show matching items
-//           } else {
-//             item.style.display = "none"; // Hide non-matching items
-//           }
-//         });
-//       });
-//     });
-//   });
-// }
-
-// // Always initialize project filtering
-// initProjectFiltering();
 
 // Typewriting Effect
 function initTypewritingEffect() {
@@ -170,4 +92,63 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+
+
+
+/*==================== ACCORDION SKILLS ====================*/
+document.addEventListener("DOMContentLoaded", () => {
+  const skillsContent = document.getElementsByClassName('skills__content'),
+        skillsHeader = document.querySelectorAll('.skills__header');
+
+  function toggleSkills() {
+    let itemClass = this.parentNode.className;
+
+    // Close all other skill categories
+    for (let i = 0; i < skillsContent.length; i++) {
+      skillsContent[i].className = 'skills__content skills__close';
+      const progressBars = skillsContent[i].querySelectorAll('.skill__progress');
+      progressBars.forEach((bar) => {
+        bar.style.width = '0%'; // Reset progress bars when closed
+      });
+    }
+
+    // Open the clicked category and animate progress bars
+    if (itemClass === 'skills__content skills__close') {
+      this.parentNode.className = 'skills__content skills__open';
+      const progressBars = this.parentNode.querySelectorAll('.skill__progress');
+      progressBars.forEach((bar) => {
+        const percentage = bar.getAttribute('data-percentage');
+        setTimeout(() => {
+          bar.style.width = `${percentage}%`; // Animate to the percentage
+        }, 100); // Add a slight delay for smoother animation
+      });
+    }
+  }
+
+  // Add click event listeners to all skill headers
+  skillsHeader.forEach((el) => {
+    el.addEventListener('click', toggleSkills);
+  });
+});
+
+/*==================== QUALIFICATION TABS ====================*/
+const tabs = document.querySelectorAll('[data-target]'),
+tabContents = document.querySelectorAll('[data-content]')
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        const target = document.querySelector(tab.dataset.target)
+        
+        tabContents.forEach(tabContent => {
+            tabContent.classList.remove('qualification__active')
+        })
+        target.classList.add('qualification__active')
+        
+        tabs.forEach(tab => {
+            tab.classList.remove('qualification__active')
+        })
+        tab.classList.add('qualification__active')
+    })
+})
 
