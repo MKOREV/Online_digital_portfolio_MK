@@ -97,28 +97,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 /*==================== ACCORDION SKILLS ====================*/
-document.addEventListener("DOMContentLoaded", () => {
-  const skillsContent = document.getElementsByClassName('skills__content'),
-        skillsHeader = document.querySelectorAll('.skills__header');
+// document.addEventListener("DOMContentLoaded", () => {
+//   const skillsContent = document.getElementsByClassName('skills__content'),
+//         skillsHeader = document.querySelectorAll('.skills__header');
 
+//   function toggleSkills() {
+//     let itemClass = this.parentNode.className;
+
+//     // Close all other skill categories
+//     for (let i = 0; i < skillsContent.length; i++) {
+//       skillsContent[i].className = 'skills__content skills__close';
+//       const progressBars = skillsContent[i].querySelectorAll('.skill__progress');
+//       progressBars.forEach((bar) => {
+//         bar.style.width = '0%'; // Reset progress bars when closed
+//       });
+//     }
+
+//     // Open the clicked category and animate progress bars
+//     if (itemClass === 'skills__content skills__close') {
+//       this.parentNode.className = 'skills__content skills__open';
+//       const progressBars = this.parentNode.querySelectorAll('.skill__progress');
+//       progressBars.forEach((bar) => {
+//         const percentage = bar.getAttribute('data-percentage');
+//         setTimeout(() => {
+//           bar.style.width = `${percentage}%`; // Animate to the percentage
+//         }, 100); // Add a slight delay for smoother animation
+//       });
+//     }
+//   }
+
+//   // Add click event listeners to all skill headers
+//   skillsHeader.forEach((el) => {
+//     el.addEventListener('click', toggleSkills);
+//   });
+// });
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const skillsSection = document.querySelector(".skills"); // Select the skills section
+  const skillsContent = document.getElementsByClassName("skills__content");
+  const skillsHeader = document.querySelectorAll(".skills__header");
+
+  // Function to toggle skills accordion
   function toggleSkills() {
     let itemClass = this.parentNode.className;
 
     // Close all other skill categories
     for (let i = 0; i < skillsContent.length; i++) {
-      skillsContent[i].className = 'skills__content skills__close';
-      const progressBars = skillsContent[i].querySelectorAll('.skill__progress');
+      skillsContent[i].className = "skills__content skills__close";
+      const progressBars = skillsContent[i].querySelectorAll(".skill__progress");
       progressBars.forEach((bar) => {
-        bar.style.width = '0%'; // Reset progress bars when closed
+        bar.style.width = "0%"; // Reset progress bars when closed
       });
     }
 
     // Open the clicked category and animate progress bars
-    if (itemClass === 'skills__content skills__close') {
-      this.parentNode.className = 'skills__content skills__open';
-      const progressBars = this.parentNode.querySelectorAll('.skill__progress');
+    if (itemClass === "skills__content skills__close") {
+      this.parentNode.className = "skills__content skills__open";
+      const progressBars = this.parentNode.querySelectorAll(".skill__progress");
       progressBars.forEach((bar) => {
-        const percentage = bar.getAttribute('data-percentage');
+        const percentage = bar.getAttribute("data-percentage");
         setTimeout(() => {
           bar.style.width = `${percentage}%`; // Animate to the percentage
         }, 100); // Add a slight delay for smoother animation
@@ -128,8 +166,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Add click event listeners to all skill headers
   skillsHeader.forEach((el) => {
-    el.addEventListener('click', toggleSkills);
+    el.addEventListener("click", toggleSkills);
   });
+
+  // Intersection Observer to trigger animation when the skills section is visible
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the 'skills__open' class to the first skills content (GIS skills)
+          const firstSkill = skillsContent[0];
+          if (firstSkill) {
+            firstSkill.className = "skills__content skills__open";
+            const progressBars = firstSkill.querySelectorAll(".skill__progress");
+            progressBars.forEach((bar) => {
+              const percentage = bar.getAttribute("data-percentage");
+              bar.style.width = `${percentage}%`; // Animate to the percentage
+            });
+          }
+          observer.unobserve(entry.target); // Stop observing once the animation is triggered
+        }
+      });
+    },
+    { threshold: 0.5 } // Trigger when 50% of the section is visible
+  );
+
+  observer.observe(skillsSection); // Observe the skills section
 });
 
 /*==================== QUALIFICATION TABS ====================*/
@@ -152,3 +214,86 @@ tabs.forEach(tab => {
     })
 })
 
+
+// Qualification scroll animation
+document.addEventListener("DOMContentLoaded", () => {
+  const qualifications = document.querySelectorAll(".qualification__data");
+
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active"); // Add the active class
+          observer.unobserve(entry.target); // Stop observing once animated
+        }
+      });
+    },
+    { threshold: 0.5 } // Trigger when 50% of the element is visible
+  );
+
+  qualifications.forEach((qualification) => {
+    observer.observe(qualification);
+  });
+});
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const skillsSection = document.querySelector(".skills"); // Select the skills section
+  const skillsContent = document.getElementsByClassName("skills__content");
+  const skillsHeader = document.querySelectorAll(".skills__header");
+
+  // Function to toggle skills accordion
+  function toggleSkills() {
+    let itemClass = this.parentNode.className;
+
+    // Close all other skill categories
+    for (let i = 0; i < skillsContent.length; i++) {
+      skillsContent[i].className = "skills__content skills__close";
+      const progressBars = skillsContent[i].querySelectorAll(".skill__progress");
+      progressBars.forEach((bar) => {
+        bar.style.width = "0%"; // Reset progress bars when closed
+      });
+    }
+
+    // Open the clicked category and animate progress bars
+    if (itemClass === "skills__content skills__close") {
+      this.parentNode.className = "skills__content skills__open";
+      const progressBars = this.parentNode.querySelectorAll(".skill__progress");
+      progressBars.forEach((bar) => {
+        const percentage = bar.getAttribute("data-percentage");
+        setTimeout(() => {
+          bar.style.width = `${percentage}%`; // Animate to the percentage
+        }, 100); // Add a slight delay for smoother animation
+      });
+    }
+  }
+
+  // Add click event listeners to all skill headers
+  skillsHeader.forEach((el) => {
+    el.addEventListener("click", toggleSkills);
+  });
+
+  // Intersection Observer to trigger animation when the skills section is visible
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Add the 'skills__open' class to the first skills content (GIS skills)
+          const firstSkill = skillsContent[0];
+          if (firstSkill) {
+            firstSkill.className = "skills__content skills__open";
+            const progressBars = firstSkill.querySelectorAll(".skill__progress");
+            progressBars.forEach((bar) => {
+              const percentage = bar.getAttribute("data-percentage");
+              bar.style.width = `${percentage}%`; // Animate to the percentage
+            });
+          }
+          observer.unobserve(entry.target); // Stop observing once the animation is triggered
+        }
+      });
+    },
+    { threshold: 0.5 } // Trigger when 50% of the section is visible
+  );
+
+  observer.observe(skillsSection); // Observe the skills section
+});

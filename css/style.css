@@ -537,13 +537,23 @@ nav .nav-links {
   margin-bottom: var(--mb-0-75);
 }
 
+
 .home__description {
   margin-bottom: var(--mb-2);
 }
 
+
 .about__description {
   text-align: center;
   margin-bottom: var(--mb-2-5);
+}
+
+.about__container {
+  display: flex; /* Use Flexbox for layout */
+  align-items: center; /* Vertically align items */
+  justify-content: space-between; /* Add space between the image and text */
+  gap: 2rem; /* Add spacing between the image and text */
+  padding: 20px; /* Add padding for spacing */
 }
 
 .about__info {
@@ -569,6 +579,19 @@ nav .nav-links {
 .about__info-name {
   display: block;
   text-align: center;
+}
+
+.about__img {
+  width: 200px;
+  border-radius: .5rem;
+  justify-self: center;
+  align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+  .about__img {
+      width: 350px;
+  }
 }
 
 .about__buttons {
@@ -752,6 +775,20 @@ nav .nav-links {
   column-gap: 1.5rem;
 }
 
+.qualification__data > div:last-child {
+  display: flex; /* Use Flexbox for alignment */
+  flex-direction: column; /* Stack the dot and line vertically */
+  align-items: center; /* Center-align the dot and line horizontally */
+}
+
+.qualification__data > div:nth-child(2) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+
 .qualification__title {
   font-size: var(--normal-font-size);
   font-weight: var(--font-medium);
@@ -769,19 +806,79 @@ nav .nav-links {
 }
 
 .qualification__rounder {
-  display: inline-block;
+  display: block;
   width: 13px;
   height: 13px;
-  background-color: green;
+  background-color: #205dc6; /* Primary color for the dot */
   border-radius: 50%;
+  position: relative; 
+  opacity: 0; /* Start invisible */
+  transform: scale(0.5); /* Start smaller */
+  animation: fadeInDot 1.5s ease forwards; /* Animation for the dot */
+
 }
 
 .qualification__line {
   display: block;
-  width: 1px;
+  width: 1.2px;
   height: 100%;
-  background-color: green;
-  transform: translate(6px, -7px);
+  background-color: #205dc6; /* Primary color for the line */
+  position: relative;
+  opacity: 0; /* Start invisible */
+  transform: scaleY(0); /* Start with no height */
+  transform-origin: top; /* Animate from top to bottom */
+  animation: growLine 1.5s ease forwards; /* Animation for the line */
+}
+
+/* Keyframe for the dot animation */
+@keyframes fadeInDot {
+  0% {
+    opacity: 0;
+    transform: scale(0.5); /* Start smaller */
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1); /* Full size */
+  }
+}
+
+/* Keyframe for the line animation */
+@keyframes growLine {
+  0% {
+    opacity: 0;
+    transform: scaleY(0); /* Start with no height */
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1); /* Full height */
+  }
+}
+
+/* Initially hide the dots and lines */
+.qualification__data .qualification__rounder,
+.qualification__data .qualification__line {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+/* Add a class to trigger the animation */
+.qualification__data.active .qualification__rounder {
+  animation: fadeInDot 1.5s ease forwards;
+}
+
+.qualification__data.active .qualification__line {
+  animation: growLine 1.5s ease forwards;
+}
+
+.qualification__data {
+  opacity: 0; /* Start invisible */
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 1.5s ease, transform 1.5s ease; /* Smooth transition */
+}
+
+.qualification__data.active {
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
 }
 
 .qualification [data-content] {
