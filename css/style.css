@@ -281,7 +281,6 @@ nav .nav-links {
     font-size: 1rem;
     padding: 5px 12px; */
   }
-}
 
 @media (max-width: 480px) {
   .hero-content h3 {
@@ -599,11 +598,6 @@ nav .nav-links {
 /* Skills Section */
 .skills {
   all: unset;
-  /* margin: 0 auto; /* Center the section */
-  /* background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */ */
-  /* border: 1px solid red;*/
 }
 
 .skills__container {
