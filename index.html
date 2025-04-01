@@ -8,11 +8,26 @@
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="./js/main.js" defer></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+
 </head>
 <body id="homepage">
 
-<!-- Full-screen background image -->
-<div class="background-overlay"></div>
+<!-- Preloader -->
+<!-- <div id="preloader">
+    <div class="grid">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <p>Are you ready ...</p>
+  </div> -->
 
 <header>
 <nav>
@@ -25,41 +40,384 @@
 </nav>
 </header>
 
-<main>
 
-<section id="home" class="hero">        
-    <div class="hero-content">
-            <h1>Welcome to my Portfolio!</h1>
-                <div class="flex">
-                    <h3 class="header-sub-title">
-                        <span class="static-text">I am a</span> <span id="word"></span><span class="blink">|</span>
-                    </h3>         
-             </div>            
-            <p>As a geospatial programmer and urban innovator, I harness data-driven insights and urban analytics to create sustainable, resilient cities and drive impactful change.</p>
-    </div>
+<div class="split-screen">
+    <div class="right">
+      <div class="content">
+        <h1>Welcome to my Portfolio!</h1>
+        <div class="flex">
+            <h3 class="header-sub-title">
+                <span class="static-text">I am a</span> <span id="word"></span><span class="blink">|</span>
+            </h3>         
+        </div>      
+        <p>As a geospatial programmer and urban innovator...</p>
 
-
+<!-- Buttons below hero content -->
 <div class="hero-buttons">
-            <a href="./pages/about.html#contact" class="hero-button">Contact me →</a>
-            <a href="./pages/work.html" class="hero-button">View All Projects →</a>
-        </div>
-</main>
+    <a href="./pages/about.html#contact" class="hero-button">Contact me →</a>
+    <a href="./pages/work.html" class="hero-button">View All Projects →</a>
+  </div>
+</div>
+</div>
 
-<!-- <footer id="footer">
-<p> Let's connect!</p>
+<!-- Right section -->
+    <div class="left">
+      <div class="content">
+        <img id="profile_pic" src="./images/Portrait_KorevaarMinqiu_2_30.jpg" alt="profile_picture_MK">
+        <h3>HI, I am </h3>
+        <h2>Minqiu</h2>
+        <h4>Master student Metropolitan Analysis Design and Engineering</h4>
+ <!-- Social icons inside home data -->
+ <div class="home__social">
+    <a href="https://www.linkedin.com/in/mkorevaar/" target="_blank" class="home__social-icon">
+      <i class="uil uil-linkedin-alt"></i>
+    </a>
+    <a href="mailto:minqiu.korevaar@gmail.com" target="_blank" class="home__social-icon">
+      <i class="uil uil-at"></i>
+    </a>
+    <a href="https://github.com/MKOREV" target="_blank" class="home__social-icon">
+      <i class="uil uil-github-alt"></i>
+    </a>
+  </div>
+</div>
+</div>
+</div>
+
+  <style>
+/* Keyframes for fade-in and slide-up animation */
+@keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px); /* Start slightly below */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0); /* End at the original position */
+    }
+  }
+
+  /* Animate the left container content */
+.split-screen .left .content,
+.split-screen .right .content {
+    animation: fadeInUp 1.2s ease-out; /* Animation duration and easing */
+    animation-delay: 0.2s; /* Delay for a smoother effect */
+    animation-fill-mode: both; /* Ensure the final state is retained */
+  }
+  
+  .home__social {
+    margin: 0px; /* Reduce spacing above the social icons */
+    padding: 0;
+  }
+  
+  /* Animate the profile picture */
+  #profile_pic {
+    animation: fadeInUp 1.5s ease-out;
+    animation-delay: 0.6s; /* Delay for a cascading effect */
+    animation-fill-mode: both;
+  }
+  
+  /* Animate the social icons */
+  .home__social {
+    animation: fadeInUp 1.5s ease-out;
+    animation-delay: 0.8s; /* Delay for the social icons */
+    animation-fill-mode: both;
+  }
+
+    .split-screen {
+        display: flex;
+        height: 100vh;
+      }
+      
+    /*  .split-screen .left {
+        background: linear-gradient(to bottom, #1bffff, #2e3192), url('../images/left-bg.jpg') no-repeat center center/cover;
+      }
+
+      .split-screen .right {
+        background: linear-gradient(to bottom, #11998e, #38ef7d), url('../images/left-bg.jpg') no-repeat center center/cover;
+      } */
+        
+      .split-screen .left {
+        position: relative; /* Position relative for layering */
+        background: url('./images/bg_topo.jpg') no-repeat center center/cover; /* Add transparency to the background image */
+        color: black; /* Text color */
+        border: 2.5px solid black; /* Black border */
+        background-blend-mode: overlay; /* Blend the background image with transparency */
+      }
+      .split-screen .right {
+        position: relative; /* Position relative for layering */
+        background: url('./images/steve-johnson-BlKuLn9vHWo-unsplash.jpg') no-repeat center center/cover; /* Add transparency */
+        background-blend-mode: overlay; /* Blend the background image with transparency */
+        color: black; /* Text color */
+        border: 2.5px solid black; /* Black border */
+        padding: 20px; /* Add padding for spacing */
+      }
+
+        .split-screen .left .content {
+            background-color: white; /* White background for the content */
+            padding: 20px; /* Add padding inside the content */
+            border: 2.5px solid black;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+            text-align: center; /* Center-align text */
+            max-width: 80%; /* Limit the width of the content */
+            margin: 0 auto; /* Center the content horizontally */
+          }
+
+          .split-screen .right .content {
+            background-color: white; /* White background for the content */
+            padding: 20px; /* Add padding inside the content */
+            border-radius: 10px; /* Rounded corners */
+            border: 2.5px solid black;
+            box-shadow: 0 6px 10px rgba(255, 255, 255, 0.744); /* Subtle shadow for depth */
+            text-align: center; /* Center-align text */
+            max-width: 80%; /* Limit the width of the content */
+            margin: 0 auto; /* Center the content horizontally */
+          
+          }
+
+
+      .split-screen .left,
+      .split-screen .right {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: flex 0.5s ease;
+      }
+      
+    /* .split-screen .left {
+        background-color: #00203fff;
+        color: black;
+      }
+      
+      .split-screen .right {
+        background-color: #adefd1ff;
+        color: white;
+      } */
+      
+      .split-screen .left:hover {
+        flex: 2;
+      }
+      
+      .split-screen .right:hover {
+        flex: 2;
+      }
+
+      /* Hero Buttons */
+.hero-buttons {
+    margin-top: 20px; /* Add spacing above the buttons */
+  }
+  
+  .hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: rgb(255, 255, 255);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .hero-button:hover {
+    background-color: #051d3b;
+  }
+  
+  /* Home Social Icons */
+  .home__social {
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    gap: 15px; /* Add spacing between icons */
+
+  }
+  
+  .home__social-icon {
+    font-size: 1.5rem;
+    color: #073571;
+    transition: color 0.3s ease;
+  }
+  
+  .home__social-icon:hover {
+    color: #051d3b;
+  }
+
+  #homepage h2 {
+    font-size: 2.5rem; /* Larger font size for emphasis */
+    font-weight: 700; /* Bold for importance */
+    color: #11068f; /* Dark gray for a professional look */
+    text-align: center; /* Center-align the title */
+    margin-bottom: 5px; /* Add spacing below the title */
+    text-transform: uppercase; /* Optional: Make the title uppercase */
+    letter-spacing: 2px; /* Add spacing between letters */
+    display: inline-block; 
+    transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for movement and shadow */
+  }
+  
+  #homepage h2:hover {
+    transform: translateY(-10px) scale(1.1) rotate(-2deg);
+    color: #205dc6;
+  }
+  
+
+      @media (max-width: 768px) {
+        .split-screen {
+          flex-direction: column; /* Stack the sections vertically */
+          padding-top: 40px;
+          height: auto; /* Allow the height to adjust dynamically */
+        }
+      
+        .split-screen .left,
+        .split-screen .right {
+          flex: 1 1 auto; /* Allow sections to take up equal space */
+          width: 100%; /* Ensure full width for each section */
+          transition: none; /* Disable hover effect on smaller screens */
+        }
+      
+        .split-screen .left:hover,
+        .split-screen .right:hover {
+          flex: 1; /* Remove hover effect */
+        }
+      
+        .split-screen .left {
+          padding: 20px; /* Add padding for better spacing */
+          text-align: center; /* Center-align text for smaller screens */
+        }
+      
+        .split-screen .right {
+          padding: 20px; /* Add padding for better spacing */
+          text-align: center; /* Center-align text for smaller screens */
+        }
+      
+        #profile_pic {
+          width: 150px; /* Adjust image size for smaller screens */
+          height: 150px;
+          border-radius: 50%; /* Keep the circular shape */
+          margin: 0 auto; /* Center the image */
+        }
+      }
+
+
+/* Preloader styles */
+    /*  #preloader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999; /
+      }
+      
+      /* Grid container */
+      /* .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 30px); 
+        grid-gap: 20px; 
+      }
+      
+      /* Grid items (squares) */
+      /*.grid div {
+        width: 30px;
+        height: 30px;
+        background-color: #073571;
+        animation: lightUp 1.5s infinite ease-in-out;
+      }
+      
+      /* Add delays to each square for a cascading effect */
+      /*.grid div:nth-child(1) {
+        animation-delay: 0s;
+      }
+      .grid div:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      .grid div:nth-child(3) {
+        animation-delay: 0.6s;
+      }
+      .grid div:nth-child(4) {
+        animation-delay: 0.8s;
+      }
+      .grid div:nth-child(5) {
+        animation-delay: 1s;
+      }
+      .grid div:nth-child(6) {
+        animation-delay: 1.2s;
+      }
+      .grid div:nth-child(7) {
+        animation-delay: 1.4s;
+      }
+      .grid div:nth-child(8) {
+        animation-delay: 1.6s;
+      }
+      .grid div:nth-child(9) {
+        animation-delay: 1.8s;
+      }
+
+      #preloader p {
+        margin-top: 50px;
+        font-size: 1.2rem;
+        color: #073571;
+        font-weight: bold;
+        text-align: center;
+      }
+      
+      /* Keyframes for the light-up animation */
+     /* @keyframes lightUp {
+        0%, 100% {
+          background-color: #073571; 
+          transform: scale(1); 
+        }
+        50% {
+          background-color: #38ef7d; 
+          transform: scale(1.2); 
+        }
+      } */
+
+  </style>
+
+<footer id="footer">
+<!-- <p> Let's connect!</p>
     <ul class="icons">
         <li><a target="_blank" href="https://www.linkedin.com/in/mkorevaar/" class="icon brands fa-linkedin"><i class="fab fa-linkedin"></i></a></li>
         <li><a target="_blank" href="https://github.com/MKOREV" class="icon brands fa-github"><i class="fab fa-github"></i></a></li>
         <li><a href="mailto:minqiu.korevaar@gmail.com" class="icon solid fa-envelope"><i class="fas fa-envelope"></i></a></li>
     </ul>
 
-<em></em>
+<em></em> -->
 <p>© All rights reserved Minqiu Korevaar 2025</p>
 
-</footer> -->
+</footer> 
 
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+<!-- Script for preloader -->
+<!-- <script>
+    window.addEventListener("load", function () {
+      const preloader = document.getElementById("preloader");
+      const minimumTime = 2500; // Minimum time in milliseconds (3 seconds)
+      const startTime = performance.now(); // Record the time when the page starts loading
+  
+      // Ensure the preloader stays for at least the minimum time
+      const fadeOutPreloader = () => {
+        const elapsedTime = performance.now() - startTime;
+        const remainingTime = Math.max(0, minimumTime - elapsedTime);
+  
+        setTimeout(() => {
+          preloader.style.opacity = "0"; // Fade out the preloader
+          setTimeout(() => {
+            preloader.style.display = "none"; // Remove it from the DOM
+          }, 500); // Wait for the fade-out effect
+        }, remainingTime);
+      };
+  
+      fadeOutPreloader();
+    });
+  </script> -->
 
 </body>
 </html>
