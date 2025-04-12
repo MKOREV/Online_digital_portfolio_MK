@@ -50,7 +50,7 @@
                 <span class="static-text">I am a</span> <span id="word"></span><span class="blink">|</span>
             </h3>         
         </div>      
-        <p>As a geospatial programmer and urban innovator...</p>
+        <p>Leveraging geospatial analysis and data visualizations to address complex metropolitan challenges</p> 
 
 <!-- Buttons below hero content -->
 <div class="hero-buttons">
@@ -73,7 +73,7 @@
       <i class="uil uil-linkedin-alt"></i>
     </a>
     <a href="mailto:minqiu.korevaar@gmail.com" target="_blank" class="home__social-icon">
-      <i class="uil uil-at"></i>
+      <i class="uil uil-envelope-edit"></i>
     </a>
     <a href="https://github.com/MKOREV" target="_blank" class="home__social-icon">
       <i class="uil uil-github-alt"></i>
@@ -82,6 +82,47 @@
 </div>
 </div>
 </div>
+
+<!-- Call-to-Action Button -->
+<div class="cta-button-container">
+  <a href="#featured-projects" class="cta-button">View Featured Projects ↓</a>
+</div>
+
+<!-- Featured Projects Section -->
+<section class="featured-projects section" id="featured-projects">
+  <h2 class="section__title">Featured Projects</h2>
+  <div class="featured-projects__container">
+    <!-- Project 1 -->
+    <div class="project__card">
+      <img src="./images/project1.jpg" alt="Project 1" class="project__image">
+      <div class="project__content">
+        <h3 class="project__title">Urban Mobility Dashboard</h3>
+        <p class="project__description">A data-driven dashboard to analyze urban mobility patterns and optimize transportation systems.</p>
+        <a href="#" class="project__link">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project__card">
+      <img src="./images/project2.jpg" alt="Project 2" class="project__image">
+      <div class="project__content">
+        <h3 class="project__title">Geospatial Analysis Tool</h3>
+        <p class="project__description">A tool for visualizing and analyzing geospatial data to address urban challenges.</p>
+        <a href="#" class="project__link">View Project →</a>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project__card">
+      <img src="./images/project3.jpg" alt="Project 3" class="project__image">
+      <div class="project__content">
+        <h3 class="project__title">Sustainability Insights</h3>
+        <p class="project__description">An interactive platform to explore sustainability metrics for metropolitan areas.</p>
+        <a href="#" class="project__link">View Project →</a>
+      </div>
+    </div>
+  </div>
+</section>
 
   <style>
 /* Keyframes for fade-in and slide-up animation */
@@ -151,6 +192,12 @@
         border: 2.5px solid black; /* Black border */
         padding: 20px; /* Add padding for spacing */
       }
+
+      .split-screen .right .content p {
+        text-align: center; /* Center the text inside the paragraph */
+        margin: 0 auto; /* Center the paragraph itself */
+        max-width: 80%; /* Optional: Limit the width for better alignment */
+    }
 
         .split-screen .left .content {
             background-color: white; /* White background for the content */
@@ -296,6 +343,168 @@
           margin: 0 auto; /* Center the image */
         }
       }
+
+
+/* Call-to-Action Button */
+.cta-button-container {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  position: absolute; /* Position relative to the split-screen */
+  bottom: 50px; /* Position it near the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for perfect centering */
+  z-index: 10; /* Ensure it appears above other elements */
+  width: 100%; /* Ensure it spans the full width */
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(90deg, #205dc6, #073571); /* Gradient background */
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-button:hover {
+  background: linear-gradient(90deg, #073571, #205dc6); /* Reverse gradient on hover */ 
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.cta-button:active {
+  transform: translateY(0); /* Reset lift effect on click */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow on click */
+}
+
+/* Add a glowing effect */
+.cta-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: all 0.5s ease;
+}
+
+.cta-button:hover::before {
+  left: 100%; /* Move the glow effect across the button */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cta-button-container {
+    position: relative; /* Reset position for smaller screens */
+    bottom: auto; /* Remove bottom positioning */
+    left: auto; /* Remove left positioning */
+    transform: none; /* Remove transform for centering */
+    margin: 2rem 0; /* Add spacing above and below */
+    width: 100%; /* Ensure the container spans the full width */
+  }
+
+  .cta-button {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 0.8rem 1.5rem; /* Adjust padding for smaller screens */
+  }
+  
+} 
+
+      /* Featured Projects Section */
+.featured-projects {
+  padding: 2rem 0;
+  text-align: center;
+  background-color: #f9f9f9; /* Light background for contrast */
+}
+
+.section__title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #073571;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.featured-projects__container {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.project__card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.project__content {
+  padding: 1rem;
+}
+
+.project__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #073571;
+  margin-bottom: 0.5rem;
+}
+
+.project__description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.project__link {
+  font-size: 0.9rem;
+  color: #205dc6;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.project__link:hover {
+  color: #073571;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .featured-projects__container {
+    flex-direction: column; /* Stack projects vertically */
+    gap: 1.5rem;
+  }
+
+  .project__card {
+    max-width: 100%; /* Full width for smaller screens */
+  }
+}
+
 
 
 /* Preloader styles */

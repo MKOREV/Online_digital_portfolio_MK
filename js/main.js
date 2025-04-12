@@ -195,3 +195,125 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Research interests and work interests
+document.querySelectorAll('.interests__tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    // Remove active class from all tabs and panels
+    document.querySelectorAll('.interests__tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.interests__panel').forEach(panel => panel.classList.remove('active'));
+
+    // Add active class to the clicked tab and corresponding panel
+    tab.classList.add('active');
+    const target = document.querySelector(tab.dataset.target);
+    target.classList.add('active');
+  });
+});
+
+
+// Scroll in animation work interests
+document.addEventListener("DOMContentLoaded", () => {
+  const elements = document.querySelectorAll("[data-animate]");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+    });
+  });
+
+  elements.forEach((el) => observer.observe(el));
+});
+
+
+// Show or hide the "Back to Top" button based on scroll position
+// document.addEventListener("DOMContentLoaded", function () {
+//   const scrollTopButton = document.getElementById("scroll-top");
+
+//   window.addEventListener("scroll", () => {
+//     if (window.scrollY > 300) {
+//       scrollTopButton.classList.add("show"); // Show the button
+//     } else {
+//       scrollTopButton.classList.remove("show"); // Hide the button
+//     }
+//   });
+
+//   // Smooth scroll to the top when the button is clicked
+//   scrollTopButton.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     window.scrollTo({
+//       top: 0,
+//       behavior: "smooth",
+//     });
+//   });
+// });
+
+
+// Show or hide the "Back to Top" button and adjust its transparency based on scroll position
+document.addEventListener("DOMContentLoaded", function () {
+  const scrollTopButton = document.getElementById("scroll-top");
+  const documentHeight = document.body.scrollHeight - window.innerHeight;
+
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY;
+    const scrollPercentage = Math.min(scrollPosition / documentHeight, 1); // Calculate scroll percentage (0 to 1)
+
+    // Show or hide the button
+    if (scrollPosition > 300) {
+      scrollTopButton.classList.add("show"); // Show the button
+    } else {
+      scrollTopButton.classList.remove("show"); // Hide the button
+    }
+
+    // Gradually adjust the button's transparency
+    scrollTopButton.style.opacity = scrollPercentage; // Set opacity based on scroll percentage (0 to 1)
+  });
+
+  // Smooth scroll to the top when the button is clicked
+  scrollTopButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+
+//Random previous and next project page
+document.addEventListener("DOMContentLoaded", function () {
+  // Array of project URLs
+  const projectPages = [
+    "../pages/work_hb3d_legend.html",
+    "../pages/work_ams_tourist.html",
+    "../pages/work_hb_geodiv_map.html",
+    "../pages/work_heat_map_construc.html",
+    "../pages/work_levels_345_3d.html",
+    "../pages/work_lg_map.html",
+    "../pages/work_poster_osaka.html",
+    "../pages/work_texel.html"
+  ];
+
+  // Function to get a random project URL
+  function getRandomProject(excludeUrl) {
+    let randomUrl;
+    do {
+      randomUrl = projectPages[Math.floor(Math.random() * projectPages.length)];
+    } while (randomUrl === excludeUrl); // Ensure the random URL is not the current page
+    return randomUrl;
+  }
+
+  // Get the current page URL
+  const currentPage = window.location.pathname.split("/").pop();
+
+  // Set the Next and Previous buttons to random project pages
+  const nextButton = document.querySelector(".nav-button.next");
+  const prevButton = document.querySelector(".nav-button.prev");
+
+  if (nextButton) {
+    nextButton.href = getRandomProject(currentPage);
+  }
+
+  if (prevButton) {
+    prevButton.href = getRandomProject(currentPage);
+  }
+});
