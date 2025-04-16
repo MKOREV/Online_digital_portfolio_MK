@@ -194,6 +194,7 @@
       }
 
       .split-screen .right .content p {
+        font-size: 1.1em;
         text-align: center; /* Center the text inside the paragraph */
         margin: 0 auto; /* Center the paragraph itself */
         max-width: 80%; /* Optional: Limit the width for better alignment */
@@ -343,6 +344,13 @@
           margin: 0 auto; /* Center the image */
         }
       }
+
+      @media (max-width: 480px) {
+        .split-screen .right .content p {
+          font-size: 0.8rem; /* Smaller font size for small phone screens */
+        }
+      }
+        
 
 
 /* Call-to-Action Button */
