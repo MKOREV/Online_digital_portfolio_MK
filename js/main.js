@@ -280,40 +280,83 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Random previous and next project page
-document.addEventListener("DOMContentLoaded", function () {
-  // Array of project URLs
-  const projectPages = [
-    "../pages/work_hb3d_legend.html",
-    "../pages/work_ams_tourist.html",
-    "../pages/work_hb_geodiv_map.html",
-    "../pages/work_heat_map_construc.html",
-    "../pages/work_levels_345_3d.html",
-    "../pages/work_lg_map.html",
-    "../pages/work_poster_osaka.html",
-    "../pages/work_texel.html"
-  ];
+// document.addEventListener("DOMContentLoaded", function () {
+//   // Array of project URLs
+//   const projectPages = [
+//     "../pages/work_hb3d_legend.html",
+//     "../pages/work_ams_tourist.html",
+//     "../pages/work_hb_geodiv_map.html",
+//     "../pages/work_heat_map_construc.html",
+//     "../pages/work_levels_345_3d.html",
+//     "../pages/work_lg_map.html",
+//     "../pages/work_poster_osaka.html",
+//     "../pages/work_texel.html"
+//   ];
 
-  // Function to get a random project URL
-  function getRandomProject(excludeUrl) {
-    let randomUrl;
-    do {
-      randomUrl = projectPages[Math.floor(Math.random() * projectPages.length)];
-    } while (randomUrl === excludeUrl); // Ensure the random URL is not the current page
-    return randomUrl;
-  }
+//   // Function to get a random project URL
+//   function getRandomProject(excludeUrl) {
+//     let randomUrl;
+//     do {
+//       randomUrl = projectPages[Math.floor(Math.random() * projectPages.length)];
+//     } while (randomUrl === excludeUrl); // Ensure the random URL is not the current page
+//     return randomUrl;
+//   }
+
+//   // Get the current page URL
+//   const currentPage = window.location.pathname.split("/").pop();
+
+//   // Set the Next and Previous buttons to random project pages
+//   const nextButton = document.querySelector(".nav-button.next");
+//   const prevButton = document.querySelector(".nav-button.prev");
+
+//   if (nextButton) {
+//     nextButton.href = getRandomProject(currentPage);
+//   }
+
+//   if (prevButton) {
+//     prevButton.href = getRandomProject(currentPage);
+//   }
+// });
+
+// Sequential previous and next project page navigation
+document.addEventListener("DOMContentLoaded", function () {
+  // Array of project URLs in sequential order
+  const projectPages = [
+    "../pages/work_levels_345_3d.html",
+    "../pages/work_hb_geodiv_map.html",
+    "../pages/work_hb_3d_legend.html",
+    "../pages/work_texel.html",
+    "../pages/work_ams_tourist.html",
+    "../pages/work_heat_map_contstruc.html",
+    "../pages/work_lg_map.html",
+    "../pages/work_poster_osaka.html"
+  ];
 
   // Get the current page URL
   const currentPage = window.location.pathname.split("/").pop();
 
-  // Set the Next and Previous buttons to random project pages
+  // Find the index of the current page in the array
+  const currentIndex = projectPages.findIndex((page) => page.includes(currentPage));
+
+  // Get the Next and Previous buttons
   const nextButton = document.querySelector(".nav-button.next");
   const prevButton = document.querySelector(".nav-button.prev");
 
+  // Set the Next button to the next project in the array
   if (nextButton) {
-    nextButton.href = getRandomProject(currentPage);
+    if (currentIndex !== -1 && currentIndex < projectPages.length - 1) {
+      nextButton.href = projectPages[currentIndex + 1]; // Link to the next project
+    } else {
+      nextButton.href = projectPages[0]; // Loop back to the first project if at the end
+    }
   }
 
+  // Set the Previous button to the previous project in the array
   if (prevButton) {
-    prevButton.href = getRandomProject(currentPage);
+    if (currentIndex > 0) {
+      prevButton.href = projectPages[currentIndex - 1]; // Link to the previous project
+    } else {
+      prevButton.href = projectPages[projectPages.length - 1]; // Loop back to the last project if at the beginning
+    }
   }
 });

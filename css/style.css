@@ -1,5 +1,6 @@
 *{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
     
     }
 
@@ -1620,6 +1621,65 @@ div.gallery {
   background-color: #051d3b;
 }
 
+/* Project Deliverables Section */
+.project-deliverables {
+  margin-top: 2rem;
+  padding: 1rem 0;
+  text-align: left; /* Align text to the left */
+}
+
+.project-deliverables h3 {
+  font-size: 1.5rem;
+  color: #073571; /* Dark blue for headings */
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center; /* Center-align the heading */
+}
+
+.deliverables-list {
+  display: flex; /* Use flexbox for alignment */
+  flex-direction: column; /* Stack items vertically */
+  align-items: center; /* Center items horizontally */
+  justify-content: center; /* Center items vertically */
+  padding: 0;
+  margin: 0 auto; /* Center the list itself */
+}
+
+.deliverables-list li {
+  margin-bottom: 0.8rem; /* Add spacing between items */
+  display: flex;
+  align-items: center; /* Align icon and text */
+  justify-content: center; /* Center the content of each list item */
+}
+
+.deliverables-list li:last-child {
+  margin-bottom: 0; /* Remove margin for the last item */
+}
+
+.deliverables-list a {
+  text-decoration: none; /* Remove default underline */
+  color: #073571; /* Dark blue for links */
+  font-size: 1rem; /* Adjust font size */
+  font-weight: 500; /* Slightly bold text */
+  display: flex;
+  align-items: center; /* Align icon and text */
+  gap: 0.5rem; /* Add spacing between icon and text */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.deliverables-list a:hover {
+  color: #205dc6; /* Slightly brighter blue on hover */
+}
+
+.deliverables-list i {
+  font-size: 1.2rem; /* Icon size */
+  color: #205dc6; /* Icon color */
+  transition: color 0.3s ease; /* Smooth color transition on hover */
+}
+
+.deliverables-list a:hover i {
+  color: #073571; /* Change icon color on hover */
+}
 
 /* Adjust for tablets (max-width: 768px) */
 @media (max-width: 768px) {
