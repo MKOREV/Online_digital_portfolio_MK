@@ -1,0 +1,6 @@
+# macOS
+.DS_Store
+
+# Ignore large portfolio source files in assests
+assests/1.5 Mobility.pdf
+assests/Mapping geodiversity in Texel_Bsc_presentation.pptx
