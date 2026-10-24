@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Measuring Sustainable Accessibility - Digital Portfolio MK</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="../js/main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/line.css">
+  <style>
+    #pp_msc_main .project-details h2 {
+      text-transform: none;
+      font-style: normal;
+    }
+
+    #pp_msc_main .project-details p,
+    #pp_msc_main .project-deliverables {
+      text-align: left;
+    }
+
+    #pp_msc_main .project-deliverables h3 {
+      text-align: left;
+    }
+
+    #pp_msc_main .deliverables-list {
+      align-items: flex-start;
+    }
+
+    #pp_msc_main .deliverables-list li {
+      justify-content: flex-start;
+      text-align: left;
+    }
+
+    #pp_msc_main .media-gallery img {
+      max-width: 360px;
+    }
+
+    #pp_msc_main .thesis-visuals {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      align-items: start;
+    }
+
+    #pp_msc_main .thesis-visuals figure {
+      margin: 0;
+    }
+
+    #pp_msc_main .thesis-visuals figure:first-child {
+      grid-column: 1 / -1;
+    }
+
+    #pp_msc_main .thesis-visuals img {
+      width: 100%;
+      max-width: none;
+      border-radius: 10px;
+    }
+
+    #pp_msc_main .workflow-image {
+      width: 100%;
+      max-width: none;
+      margin-top: 1rem;
+      border-radius: 10px;
+    }
+
+    #pp_msc_main .thesis-visuals figcaption {
+      margin-top: 0.6rem;
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    #pp_msc_main .case-study-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px 20px;
+    }
+
+    #pp_msc_main .case-study-section h3 {
+      color: #073571;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    #pp_msc_main .case-study-section p {
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    #pp_msc_main .case-study-section .deliverables-list {
+      display: block;
+      list-style: disc;
+      padding-left: 1.5rem;
+    }
+
+    #pp_msc_main .case-study-section .deliverables-list li {
+      display: list-item;
+      margin-bottom: 0.8rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 700px) {
+      #pp_msc_main .thesis-visuals {
+        grid-template-columns: 1fr;
+      }
+
+      #pp_msc_main .thesis-visuals figure:first-child {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+<body id="pp_msc_main">
+
+<header>
+  <nav>
+    <a href="../index.html" class="logo"><img src="../images/1_logo.png" alt="Logo"></a>
+    <div class="nav-links">
+      <a href="../index.html" style="text-decoration:none; color:#073571;">Home | </a>
+      <a href="./about.html" style="text-decoration:none; color:#073571;">About | </a>
+      <a href="./work.html" style="text-decoration:none; color:#073571;">My work</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="project-wrapper">
+    <a href="./work.html" class="close-button" title="Back to Projects">
+      <i class="fas fa-times"></i>
+    </a>
+
+    <section class="project-main">
+      <div class="project-content">
+        <div class="project-image">
+          <img src="../images/msc_sai_amsterdam_map.png" alt="Amsterdam origin-level sustainable accessibility map showing different accessibility scores by travel mode">
+        </div>
+
+        <div class="project-details">
+          <h1>Measuring Sustainable Accessibility at the Neighbourhood Scale</h1>
+          <h2>A GIS-based multimodal index for access to daily opportunities</h2>
+
+          <p>
+            For my master thesis, I developed and tested a Sustainable Accessibility Index (SAI) to measure how easily people can reach essential daily opportunities without using a private car. The method compares neighbourhoods across the Netherlands using walking, cycling, and multimodal combinations with public transport.
+          </p>
+
+          <p>
+            The index combines travel-time acceptability, the number and sufficiency of reachable opportunities, sustainable transport modes, and multiple destination categories. Rather than producing only a ranking, the decomposable GIS-based method makes accessibility differences explainable: it can show whether a gap is related to travel time, local opportunity provision, transport mode, or spatial variation within a neighbourhood.
+          </p>
+
+          <div class="project-tags">
+            <span class="tag">QGIS</span>
+            <span class="tag">Python</span>
+            <span class="tag">Accessibility</span>
+          </div>
+
+          <div class="project-deliverables">
+            <h3>Project Deliverables</h3>
+            <ul class="deliverables-list">
+              <li>
+                <a href="https://resolver.tudelft.nl/uuid:5e26b96c-ff67-4d2f-8062-06ee1a14e8b5" target="_blank" rel="noopener noreferrer">
+                  <i class="uil uil-external-link-alt"></i> Read the master thesis on the TU Delft repository
+                </a>
+              </li>
+              <li>
+                <a href="../assests/Thesis defence presentation MK July-3 copy.pdf" target="_blank" rel="noopener noreferrer">
+                  <i class="uil uil-presentation"></i> View the thesis defence presentation
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-media">
+      <h3>Accessibility at the origin level</h3>
+      <div class="thesis-visuals">
+        <figure>
+          <img src="../images/msc_sai_amsterdam_map.png" alt="Amsterdam origin-level sustainable accessibility map for walking, walking with public transport, cycling, and cycling with public transport">
+          <figcaption>The same neighbourhood can produce different accessibility outcomes depending on the origin point and the available travel mode.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/msc_sai_radar_lower.png" alt="Four radar charts showing category scores for a lower-accessibility origin">
+          <figcaption>Lower-score origin: accessibility is uneven across opportunity categories.</figcaption>
+        </figure>
+        <figure>
+          <img src="../images/msc_sai_radar_higher.png" alt="Four radar charts showing category scores for a higher-accessibility origin">
+          <figcaption>Higher-score origin: stronger access across categories creates a more complete accessibility profile.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="case-study-section">
+      <h3>Approach</h3>
+      <p>
+        I designed the Sustainable Accessibility Index as a transparent and decomposable workflow rather than a single black-box score. The analysis begins with neighbourhood boundaries and population-based origin points from CBS, daily opportunities and active-transport networks from OpenStreetMap, and public-transport networks from GTFS data.
+      </p>
+      <p>
+        Python was used to prepare the spatial inputs, calculate travel times with R5 through r5py, apply travel-time acceptability and opportunity-sufficiency parameters, and combine the results into scores for each origin, mode, opportunity category, and neighbourhood. This structure makes the final result traceable back to the data and assumptions behind it.
+      </p>
+      <img class="workflow-image" src="../images/msc_sai_workflow_slide6.png" alt="Sustainable Accessibility Index workflow connecting land use, transport, temporal, and individual components">
+    </section>
+
+    <section class="case-study-section">
+      <h3>Key findings</h3>
+      <ul class="deliverables-list">
+        <li>More urbanised neighbourhoods generally provide higher sustainable accessibility, but urbanisation alone does not explain the differences.</li>
+        <li>Walking and cycling combined with public transport can extend access beyond the immediate neighbourhood.</li>
+        <li>Cycling can outperform multimodal travel in highly and moderately urbanised neighbourhoods.</li>
+        <li>Neighbourhood averages can hide substantial differences between origins within the same neighbourhood.</li>
+        <li>The SAI is most useful as a diagnostic planning tool: its layers indicate whether a gap comes from travel time, opportunity provision, transport mode, or spatial inequality.</li>
+      </ul>
+    </section>
+
+    <div class="project-navigation">
+      <a href="./work_zaanstraat.html" class="nav-button prev">← Previous</a>
+      <a href="./work.html" class="nav-button back">Back to Projects</a>
+      <a href="./work_levels_345_3d.html" class="nav-button next">Next →</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© All rights reserved Minqiu Korevaar 2026</p>
+</footer>
+
+</body>
+</html>
